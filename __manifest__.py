@@ -21,13 +21,14 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base' ,'mail'],
 
     # always loaded
     'data': [
         'data/ir_sequence_data.xml',
-        'security/ir.model.access.csv',
         'security/doctors_security.xml',
+        'security/ir.model.access.csv',
+
         'views/main_menu_file.xml',
         'views/doc_reg.xml',
         'views/doc_mech.xml',

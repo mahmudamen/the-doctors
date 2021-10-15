@@ -2,7 +2,7 @@ from odoo import fields, models, api
 
 
 class DocDoctor(models.Model):
-    _name = 'doc.docdoctor'
+    _name = 'doc.doc_doctor'
     _description = 'doctors list'
 
     doctor_id = fields.Many2one('res.partner', domain=[('is_doctor', '=', True)], string="doctor", required=True)
