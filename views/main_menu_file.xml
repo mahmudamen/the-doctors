@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+        <menuitem 
+        	id="main_menu_doctors_Management"
+        	name="Doctors"
+            web_icon="doctors,static/description/download.png"
+           />
+</openerp>

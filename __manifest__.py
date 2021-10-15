@@ -28,6 +28,7 @@
         'data/ir_sequence_data.xml',
         'security/ir.model.access.csv',
         'security/doctors_security.xml',
+        'views/main_menu_file.xml',
         'views/doc_reg.xml',
         'views/doc_mech.xml',
         'views/res_partner.xml',
