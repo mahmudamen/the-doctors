@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_doc_reg_manager,doc.doc_reg,doctors.model_doc_doc_reg,doctors.group_doctors_manager,1,1,1,1
+access_doc_mech_manager,doc.doc_mech,doctors.model_doc_doc_mech,doctors.group_doctors_manager,1,1,1,1
+
+
+access_doc_reg_receptionist,doc.doc_reg,doctors.model_doc_doc_reg,doctors.group_doctors_receptionist,1,1,1,0
+access_doc_mech_receptionist,doc.doc_mech,doctors.model_doc_doc_mech,doctors.group_doctors_receptionist,1,1,1,0
+
+
+access_doc_reg_doctor,doc.doc_reg,doctors.model_doc_doc_reg,doctors.group_doctors_doctor,1,1,1,1
+access_doc_mech_doctor,doc.doc_mech,doctors.model_doc_doc_mech,doctors.group_doctors_doctor,1,1,0,0
