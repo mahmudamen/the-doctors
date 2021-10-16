@@ -72,11 +72,11 @@ class DocReg(models.Model):
 
     def action_patient_open(self):
         self.reg_flag = "1"
-        self.state = "open patient"
+        self.reg_state = "open patient"
 
     def action_patient_close(self):
         self.reg_flag = "0"
-        self.state = "close patient"
+        self.reg_state = "close patient"
 
     reg_discount = fields.Float(string='patient discount')
     reg_level_debit = fields.Float(string='level debit')
@@ -84,12 +84,27 @@ class DocReg(models.Model):
     attach_flag = fields.Selection([('1', 'attach'), ('0', 'no attach')],default='0', string="attach flag")
     attach_room = fields.Float('attach room debit')
     reg_mech = fields.Many2one('doc.doc_mech',string='machine name')
-    reg_mech_debit = fields.Float(string='machine debit', compute='get_mech_debit')
+    reg_mech_debit = fields.Float(string='machine debit')
+
+    @api.onchange('reg_mech')
+    def onchange_reg_mech(self):
+        if self.reg_mech:
+            v = self.reg_mech[0]['id']
+            for x in self:
+                rec_mech_debit = self.env['doc.doc_mech'].search_read([('id', '=', v)])
+                print(x.reg_mech[0])
+            for rec in rec_mech_debit:
+                self.reg_mech_debit = rec['mech_debit']
+
 
     def get_mech_debit(self):
-        debit = self.env['doc.doc_mach'].search_count([('mech_id', '=', self.reg_mech)])
-        self.reg_mech_debit = debit
-
+        if self.reg_mech:
+            v = self.reg_mech[0]['id']
+            for x in self:
+                rec_mech_debit = self.env['doc.doc_mech'].search_read([('id', '=', v)])
+                print(x.reg_mech[0])
+            for rec in rec_mech_debit:
+                self.reg_mech_debit = rec['mech_debit']
 
     c_arm = fields.Float(string='c arm debit')
 

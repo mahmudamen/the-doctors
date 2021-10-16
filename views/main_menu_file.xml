@@ -4,6 +4,6 @@
         <menuitem 
         	id="main_menu_doctors_Management"
         	name="Doctors"
-            web_icon="doctors,static/description/download.png"
+            web_icon="doctors,static/description/icon.png"
            />
 </openerp>

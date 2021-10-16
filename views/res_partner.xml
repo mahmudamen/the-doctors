@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-        <record id="res_partner_inherit_form_extended_periods_view" model="ir.ui.view">
-            <field name="name">res.partner.inherit.form.extended.periods.view</field>
+        <record id="res_partner_inherit_form_doctors_view" model="ir.ui.view">
+            <field name="name">res.partner.inherit.form.doctors.view</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
@@ -12,9 +12,9 @@
                 <notebook>
                     <page string="Medical">
                         <group colspan="3" col="3">
-                            <field name="is_entity" />
-                            <field name="is_subject" />
-                            <field name="is_new_city" />
+                            <field name="is_doctor" />
+                            <field name="is_patient" />
+                            <field name="is_nurse" />
                         </group>
                     </page>
                 </notebook>
@@ -27,16 +27,12 @@
             <field name="res_model">res.partner</field>
             <field name="binding_view_types">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="domain">[('is_insurance_company','=',1)]</field>
-            <field name="context">{'default_is_insurance_company': 1,'search_default_is_insurance_company': 1}
-            </field>
         </record>
 
 
 
 
-        <menuitem id="menu_insurance_company" action="act_res_partner"
-            sequence="1" parent="main_menu_extended_periods_Management" />
+
 
 </odoo>
 

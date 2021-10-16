@@ -15,7 +15,6 @@ class res_partner(models.Model):
     is_doctor_drugs = fields.Boolean(string='Doctor Drugs')
     is_doctor_assist = fields.Boolean(string='Doctor Assist')
     is_nurse = fields.Boolean(string='Nurse')
-    is_institution = fields.Boolean('Institution')
     reference = fields.Char('ID Number')
 
 

@@ -1,11 +1,11 @@
-from odoo import fields, models, api
+from odoo import api, fields, models, _
+from datetime import date,datetime
 
 
 class DocMech(models.Model):
     _name = 'doc.doc_mech'
     _description = 'machine list'
 
-    mech_id = fields.Many2one('res.partner',domain=[('is_mech','=',True)],string="machine", required= True)
     name = fields.Char(string='machine name')
     mech_debit = fields.Float(string='machine debit')
     state = fields.Selection([('open','open'),('close','close'),('append','append')],string="machine state", defualt='open' )

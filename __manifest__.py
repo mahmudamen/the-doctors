@@ -28,10 +28,8 @@
         'data/ir_sequence_data.xml',
         'security/doctors_security.xml',
         'security/ir.model.access.csv',
-
         'views/main_menu_file.xml',
         'views/doc_reg.xml',
-        'views/doc_mech.xml',
         'views/res_partner.xml',
     ],
     # only loaded in demonstration mode

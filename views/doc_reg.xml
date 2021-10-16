@@ -5,9 +5,9 @@
             <field name="name">doc.doc_reg.form</field>
             <field name="model">doc.doc_reg</field>
             <field name="arch" type="xml">
-                <form string="Extended periods list">
+                <form string="patient list">
                     <header>
-                        <field name="state" widget="statusbar"  option="{'clickable':'1'}"/>
+                        <field name="reg_state" widget="statusbar"  option="{'clickable':'1'}"/>
 
                     </header>
                     <sheet>
@@ -36,6 +36,8 @@
                                     <field name="rh" />
                                     <field name="reg_address" />
                                     <field name="marital_status" widget="one2many_list"/>
+                                    <field name="reg_mech" widget="one2many_list"/>
+                                    <field name="reg_mech_debit" />
                                 </group>
                             </group>
                         </group>
@@ -53,18 +55,8 @@
             <field name="name">doc.doc_reg.tree</field>
             <field name="model">doc.doc_reg</field>
             <field name="arch" type="xml">
-                <tree string="extended periods list">
-                    <field name="subject_id"/>
-                    <field name="entity_id"/>
-                    <field name="new_city_id"/>
-                    <field name="agency_issue_number" />
-                    <field name="order_number" />
-                    <field name="agency_issue_date" widget="many2many_tags"/>
-                    <field name="modified_expiration_date" widget="many2many_tags"/>
-                    <field name="committee_issue_number_to_agency" widget="many2many_tags"/>
-                    <field name="issued_by_the_committee_to_the_advisory" widget="many2many_tags"/>
-                    <field name="low_type"/>
-                    <field name="Administrator" widget="one2many_list"/>
+                <tree string="patient list">
+                    <field name="reg_id"/>
                 </tree>
             </field>
         </record>
@@ -76,36 +68,11 @@
                 <search string="extended periods list">
                     <separator orientation="vertical" />
 
-                    <field name="Administrator"/>
-                    <field name="subject_id"/>
-                    <field name="entity_id"/>
-                    <field name="new_city_id"/>
-                    <field name="agency_issue_number" />
-                    <field name="agency_issue_date"/>
-                    <field name="modified_expiration_date" />
-                    <field name="committee_issue_number_to_agency" />
-                    <field name="issued_by_the_committee_to_the_advisory"/>
-                    <field name="order_number" />
-                    <field name="low_type"/>
+                    <field name="reg_id"/>
+
                     <newline />
                     <group expand="0" string="Group By">
-                        <filter string="Administrator" name='by_Administrator' domain="[]" context="{'group_by':'Administrator'}"/>
-                        <filter string="subject_id" name='by_subject_id' domain="[]" context="{'group_by':'subject_id'}"/>
-                        <filter string="entity_id" name='by_entity_id' domain="[]" context="{'group_by':'entity_id'}"/>
-                        <filter string="new_city_id" name='by_new_city_id' domain="[]" context="{'group_by':'new_city_id'}"/>
-                        <filter string="low_type" name="low_type" domain="[]" context="{'group_by':'low_type'}"/>
-                        <filter string="Last 15 days agency issue date" name="four_weeks"  domain="[('agency_issue_date','>=',(context_today() + relativedelta(days=-15, weekday=0)).strftime('%Y-%m-%d'))]"/>
-                        <filter string="After 21 committee issue number to agency" name="four_weeks"  domain="[('committee_issue_number_to_agency','=',(context_today() + relativedelta(days=21, weekday=0)).strftime('%Y-%m-%d'))]"/>
-                        <filter string="Expire This Week committee issue number to agency" name="expire_this_week"
-                        domain="['&amp;',('committee_issue_number_to_agency', '&gt;=', (context_today() + relativedelta(weeks=-1,days=1,weekday=0)).strftime('%Y-%m-%d')),
-                        ('committee_issue_number_to_agency', '&lt;=', (context_today() + relativedelta(weekday=6)).strftime('%Y-%m-%d'))]"/>
-                        <newline/>
-                        <filter string="Today agency issue date" name="agency_issue_date" domain="[('agency_issue_date','=',(context_today()).strftime('%Y-%m-%d'))]"/>
-                        <filter string="Today modified expiration date" name="modified_expiration_date" domain="[('modified_expiration_date','=',(context_today()).strftime('%Y-%m-%d'))]"/>
-                        <filter string="Today committee issue number to agency" name="committee_issue_number_to_agency" domain="[('committee_issue_number_to_agency','=',(context_today()).strftime('%Y-%m-%d'))]"/>
-                        <filter string="Today issued by the committee to the advisory" name="issued_by_the_committee_to_the_advisory" domain="[('issued_by_the_committee_to_the_advisory','=',(context_today()).strftime('%Y-%m-%d'))]"/>
-                        <newline/>
-
+                        <filter string="reg_id" name='by_reg_id' domain="[]" context="{'group_by':'reg_id'}"/>
                     </group>
                 </search>
             </field>
@@ -116,22 +83,17 @@
                     <field name="model">doc.doc_reg</field>
                     <field name="arch" type="xml">
                         <kanban >
-                            <progressbar field="state" widget="progressbar" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
-                            <field name="subject_id"/>
-                            <field name="entity_id"/>
-                            <field name="new_city_id"/>
-                            <field name="state"/>
+                            <progressbar field="state" widget="progressbar" colors='{"open": "success", "close": "warning", "append": "danger"}'/>
+                            <field name="reg_id"/>
                             <templates>
                                 <t t-name="kanban-box" >
                                       <div class="oe_kanban_global_click">
                                         <div class="oe_kanban_details">
                                             <strong class="o_kanban_record_title">
-                                                <field name="subject_id"/>
+                                                <field name="reg_id"/>
                                             </strong>
                                             <ul>
-                                                <li><strong>ENTITY: <field name="entity_id"></field></strong></li>
-                                                <li><strong>modified expiration date: <field name="modified_expiration_date" widget="many2many_tags"></field></strong></li>
-                                                <li style="color:RED"><strong>Administrator: <field name="Administrator"></field></strong></li>
+                                                <li><strong>ENTITY: <field name="reg_id"></field></strong></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -145,12 +107,9 @@
             <field name="name">doc.doc_reg.calendar.view</field>
             <field name="model">doc.doc_reg</field>
             <field name="arch" type="xml">
-                <calendar string="extended periods list" color="subject_id"
+                <calendar string="patient list" color="reg_id"
                     quick_add="True"  event_open_popup="true" mode="month" date_start="write_date">
-                    <field name="subject_id" />
-                    <field name="entity_id" />
-                    <field name="new_city_id" />
-                    <field name="low_type"/>
+                    <field name="reg_id" />
                 </calendar>
             </field>
         </record>
@@ -159,13 +118,10 @@
             <field name="name">doc.doc_reg.pivot</field>
             <field name="model">doc.doc_reg</field>
             <field name="arch" type="xml">
-                <pivot string="extended periods list History Analysis">
-                   <field name="subject_id" type="row"/>
-                   <field name="new_city_id" type="measure"/>
-                    <field name="subject_id" type="measure"/>
-                    <field name="entity_id" type="measure"/>
-                   <field name="entity_id" type="col"/>
-                    <field name="low_type" type="col"/>
+                <pivot string="patient list History Analysis">
+                   <field name="reg_id" type="row"/>
+                   <field name="reg_id" type="measure"/>
+                    <field name="reg_id" type="col"/>
                 </pivot>
             </field>
         </record>
@@ -175,13 +131,9 @@
            <field name="model">doc.doc_reg</field>
            <field name="type">graph</field>
            <field name="arch" type="xml">
-                 <graph string="extended periods list"  orientation="horizontal"  type="pie" >
-                    <field name="new_city_id"/>
-                     <field name="subject_id" group="True" type="measure" />
-                     <field name="entity_id" group="True" type="measure" />
-                     <field name="low_type" group="True" type="measure"/>
-                     <field name="Administrator" />
-                     <field name="low_type"/>
+                 <graph string="patient list"  orientation="horizontal"  type="pie" >
+                    <field name="reg_id"/>
+                     <field name="reg_id" group="True" type="measure" />
                 </graph>
             </field>
         </record>
@@ -191,14 +143,14 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">doc.doc_reg</field>
             <field name="view_mode">kanban,tree,form,calendar,pivot,graph</field>
-            <field name="search_view_id" ref="extended_periods_list_search_view"></field>
+            <field name="search_view_id" ref="doc_reg_list_search_view"></field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    There is no examples click here to add new extended periods list.
+                    There is no examples click here to add new patient list.
                 </p>
             </field>
         </record>
-        <menuitem name="docreg" id="doc_reg_list_menu"
+        <menuitem name="Patient" id="doc_reg_list_menu"
                   parent="main_menu_doctors_Management"
                   action="doc_reg_list_act_window"/>
     </data>
