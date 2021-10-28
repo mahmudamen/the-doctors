@@ -5,8 +5,7 @@ class DocNurse(models.Model):
     _name = 'doc.doc_nurse'
     _description = 'nurse list'
 
-    nurse_id = fields.Many2one('res.partner', domain=[('is_nurse', '=', True)], string="nurse", required=True)
-    name = fields.Char(string='nurse name')
+    name = fields.Many2one('res.partner',domain=[('is_nurse','=',True)],string="nurse name", required= True)
     state = fields.Selection([('open', 'open'), ('close', 'close'), ('append', 'append')], string="nurse state",
                              defualt='open')
     activity_states = fields.Char(string="activity state", default='open')

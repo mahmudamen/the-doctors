@@ -5,7 +5,7 @@ access_doc_nurse_manager,doc.doc_nurse,doctors.model_doc_doc_nurse,doctors.group
 access_doc_surgery_manager,doc.doc_surgery,doctors.model_doc_doc_surgery,doctors.group_doctors_manager,1,1,1,1
 access_doc_doctor_manager,doc.doc_doctor,doctors.model_doc_doc_doctor,doctors.group_doctors_manager,1,1,1,1
 access_medical_group_manager,doc.doc_doctor,model_res_partner,group_doctors_manager,1,1,1,1
-
+access_doc_room_group_manager,doc.doc_room,model_doc_doc_room,group_doctors_manager,1,1,1,1
 
 access_doc_reg_receptionist,doc.doc_reg,doctors.model_doc_doc_reg,doctors.group_doctors_receptionist,1,1,1,1
 access_doc_mech_receptionist,doc.doc_mech,doctors.model_doc_doc_mech,doctors.group_doctors_receptionist,1,1,1,1
@@ -13,6 +13,8 @@ access_doc_nurse_receptionist,doc.doc_nurse,doctors.model_doc_doc_nurse,doctors.
 access_doc_surgery_receptionist,doc.doc_surgery,doctors.model_doc_doc_surgery,doctors.group_doctors_receptionist,1,1,1,1
 access_doc_doctor_receptionist,doc.doc_doctor,doctors.model_doc_doc_doctor,doctors.group_doctors_receptionist,1,1,1,1
 access_medical_group_receptionist,doc.doc_doctor,model_res_partner,group_doctors_receptionist,1,1,1,1
+access_doc_room_receptionist,doc.doc_room,model_doc_doc_room,group_doctors_receptionist,1,1,1,1
+access_doc_reg_mech_receptionist,doc.doc_mech,model_doc_doc_reg_mech,group_doctors_receptionist,1,1,1,1
 
 access_doc_reg_doctor,doc.doc_reg,doctors.model_doc_doc_reg,doctors.group_doctors_doctor,1,1,1,1
 access_doc_mech_doctor,doc.doc_mech,doctors.model_doc_doc_mech,doctors.group_doctors_doctor,1,1,1,1
@@ -20,3 +22,14 @@ access_doc_nurse_doctor,doc.doc_nurse,doctors.model_doc_doc_nurse,doctors.group_
 access_doc_surgery_doctor,doc.doc_surgery,doctors.model_doc_doc_surgery,doctors.group_doctors_doctor,1,1,1,1
 access_doc_doctor_doctor,doc.doc_doctor,doctors.model_doc_doc_doctor,doctors.group_doctors_doctor,1,1,1,1
 access_medical_group_doctor,doc.doc_doctor,model_res_partner,group_doctors_doctor,1,1,1,1
+access_doc_room_doctor,doc.doc_room,model_doc_doc_room,group_doctors_doctor,1,1,1,1
+access_doc_reg_mech_doctor,doc.doc_reg_mech,model_doc_doc_reg_mech,group_doctors_doctor,1,1,1,1
+
+access_doc_reg_nurse,doc.doc_reg,doctors.model_doc_doc_reg,doctors.group_doctors_nurse,1,1,1,1
+access_doc_mech_nurse,doc.doc_mech,doctors.model_doc_doc_mech,doctors.group_doctors_nurse,1,1,1,1
+access_doc_nurse_nurse,doc.doc_nurse,doctors.model_doc_doc_nurse,doctors.group_doctors_nurse,1,1,1,1
+access_doc_surgery_nurse,doc.doc_surgery,doctors.model_doc_doc_surgery,doctors.group_doctors_nurse,1,1,1,1
+access_doc_doctor_nurse,doc.doc_doctor,doctors.model_doc_doc_doctor,doctors.group_doctors_nurse,1,1,1,1
+access_medical_group_nurse,doc.doc_doctor,model_res_partner,group_doctors_nurse,1,1,1,1
+access_doc_room_nurse,doc.doc_room,model_doc_doc_room,group_doctors_nurse,1,1,1,1
+access_doc_reg_doc_nurse,doc.doc_reg_mech,model_doc_doc_reg_mech,group_doctors_nurse,1,1,1,1

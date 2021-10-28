@@ -7,11 +7,13 @@
             <field name="arch" type="xml">
                 <form string="patient list">
                     <header>
-                        <field name="reg_state" widget="statusbar"  option="{'clickable':'1'}"/>
-
+                        <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale"/>
                     </header>
                     <sheet>
-
+                        <field name="photo" nolabel="1"
+                            class="oe_left oe_avatar" img_width="120"
+                            img_height="120" width="120" height="120"
+                            widget="image" />
                         <div class="oe_title">
                             <div class="oe_edit_only">
                                 <label for="reg_id" />
@@ -24,23 +26,74 @@
                                      />
                             </h1>
                         </div>
-                        <group>
-                            <group>
-                                <field style="width: 100%" name="date_of_birth" />
-                                 <field style="width: 100%" name="age" />
-                                 <field style="width: 100%" name="sex" widget="one2many_list"/>
-                                <group col="5" style="width:100%;">
-                                    <field name="blood_type" style="width: auto;"/>
+                        <group col="1">
+                            <group col="1" >
+                                <group col="5" >
+                                 <field  name="date_of_birth" style="width: auto;"/>
+                                 <field  name="age" />
+                                 <field  name="sex" widget="one2many_list" style="width: auto;"/>
                                 </group>
-                                <group style="width:100%;">
-                                    <field name="rh" />
-                                    <field name="reg_address" />
-                                    <field name="marital_status" widget="one2many_list"/>
-                                    <field name="reg_mech" widget="one2many_list"/>
-                                    <field name="reg_mech_debit" />
+                                <group col="6" >
+                                    <field name="blood_type" style="width: auto;"/>
+                                    <field name="rh" style="width: auto;"/>
+                                </group>
+                                <group col="6" >
+                                    <field name="reg_address" style="width: auto;"/>
+                                    <field name="marital_status" widget="one2many_list" style="width: auto;"/>
+                                </group>
+                                <group col="6" >
+                                     <field name="reg_date"  style="width: auto;"/>
+                                     <field name="reg_level"  style="width: auto;"/>
+                                     <field name="reg_room"  style="width: auto;"/>
+                                     <field name="reg_bed"  style="width: auto;"/>
+                                </group>
+                                <group col="6" >
+                                     <field name="reg_reason"  style="width: auto;"/>
+                                     <field name="reg_date_out"  style="width: auto;"/>
+                                     <field name="reg_day"  style="width: auto;"/>
+                                </group>
+                                <group col="6" >
+                                    <field name="r_name"  style="width: auto;"/>
+                                    <field name="r_level"  style="width: auto;"/>
+                                    <field name="r_id"  style="width: auto;"/>
+                                </group>
+                                <group col="6" >
+                                    <field name="r_job"  style="width: auto;"/>
+                                    <field name="r_address"  style="width: auto;"/>
+                                    <field name="r_tel"  style="width: auto;"/>
+                                </group>
+                                <group col="6" >
+                                    <field name="doc_name" widget="one2many_list" style="width: auto;"/>
+                                    <field name="doc_drugs"  widget="one2many_list" style="width: auto;"/>
+                                    <field name="doc_assist" widget="one2many_list" style="width: auto;"/>
+                                    <field name="nurse_name" widget="one2many_list" style="width: auto;"/>
+                                </group>
+                                <group col="6" >
+                                    <field name="ensure" widget="monetary" style="width: auto;"/>
+                                    <field name="reg_other_debit"  widget="monetary" style="width: auto;"/>
                                 </group>
                             </group>
                         </group>
+                        <notebook position="inside">
+                            <page string="mech details">
+                            <field name="doc_reg_mechs">
+                                <tree string="Sales Order Lines"
+                                    editable="bottom"
+                                    decoration-info="(not display_type and invoice_status == 'to invoice')">
+                                    <field name="mech_id"  />
+                                    <field name="display_type" invisible="1"/>
+                                    <field name="discount" string="Disc.%" groups="product.group_discount_per_so_line" optional="show"/>
+                                    <field name="price_subtotal" widget="monetary" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                    <field name="price_total" widget="monetary" groups="account.group_show_line_subtotals_tax_included"/>
+                                    <field name="state" invisible="1" />
+                                    <field name="invoice_status" invisible="1"/>
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="price_tax" invisible="1"/>
+                                    <field name="company_id" invisible="1"/>
+                                </tree>
+                            </field>
+                            </page>
+                        </notebook>
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers"
@@ -65,7 +118,7 @@
             <field name="name">doc.doc_reg.search</field>
             <field name="model">doc.doc_reg</field>
             <field name="arch" type="xml">
-                <search string="extended periods list">
+                <search string="Patient list">
                     <separator orientation="vertical" />
 
                     <field name="reg_id"/>
@@ -83,7 +136,7 @@
                     <field name="model">doc.doc_reg</field>
                     <field name="arch" type="xml">
                         <kanban >
-                            <progressbar field="state" widget="progressbar" colors='{"open": "success", "close": "warning", "append": "danger"}'/>
+                            <progressbar field="reg_state" widget="progressbar" colors='{"open": "success", "close": "warning", "append": "danger"}'/>
                             <field name="reg_id"/>
                             <templates>
                                 <t t-name="kanban-box" >
@@ -93,7 +146,7 @@
                                                 <field name="reg_id"/>
                                             </strong>
                                             <ul>
-                                                <li><strong>ENTITY: <field name="reg_id"></field></strong></li>
+                                                <li><strong>debit: <field name="reg_id"></field></strong></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -139,7 +192,7 @@
         </record>
 
         <record id="doc_reg_list_act_window" model="ir.actions.act_window">
-            <field name="name">extended periods list</field>
+            <field name="name">patient list</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">doc.doc_reg</field>
             <field name="view_mode">kanban,tree,form,calendar,pivot,graph</field>
