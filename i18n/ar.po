@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0+e\n"
+"Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 13:55+0000\n"
-"PO-Revision-Date: 2021-10-16 13:55+0000\n"
+"POT-Creation-Date: 2022-03-20 11:44+0000\n"
+"PO-Revision-Date: 2022-03-20 11:44+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,24 +16,50 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__blood_type__ab
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__blood_type__ab
 msgid "AB"
-msgstr "AB"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_needaction
-msgid "Action Needed"
-msgstr "يحتاج فعل"
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Add a note"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_attachment_count
-msgid "Attachment Count"
-msgstr "عدد المرفقات"
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Add a product"
+msgstr "اضف دواء"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__blood_type
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Add a section"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_sale_order__doc_assist
+msgid "Assist Doctor"
+msgstr "طبيب مساعد"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_sale_order__blood_type
 msgid "Blood Type"
 msgstr "فصيلة الدم"
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__state__cancel
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: doctors
+#: model:ir.ui.menu,name:doctors.configuration_list_menu
+msgid "Configuration Clinic"
+msgstr "اعداد العيادة"
 
 #. module: doctors
 #: model:ir.model,name:doctors.model_res_partner
@@ -44,7 +70,7 @@ msgstr "جهة الاتصال"
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__create_uid
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__create_uid
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse__create_uid
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__create_uid
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__create_uid
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__create_uid
 msgid "Created by"
 msgstr "انشاء بواسطة"
@@ -53,96 +79,95 @@ msgstr "انشاء بواسطة"
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__create_date
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__create_date
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse__create_date
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__create_date
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__create_date
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__create_date
 msgid "Created on"
 msgstr "انشاء في"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__date_of_birth
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__partner_id
+#: model:ir.model.fields,field_description:doctors.field_sale_order__partner_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_sale_order__date_of_birth
 msgid "Date of Birth"
 msgstr "تاريخ الميلاد"
 
 #. module: doctors
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Delivered"
+msgstr "تم التوصيل"
+
+#. module: doctors
 #: model:ir.model,name:doctors.model_doc_doc_surgery
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
 msgid "Description"
 msgstr "توضييح"
+
+#. module: doctors
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Disc.%"
+msgstr ""
 
 #. module: doctors
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__display_name
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__display_name
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse__display_name
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__display_name
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__display_name
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__display_name
+#: model:ir.model.fields,field_description:doctors.field_product_product__display_name
+#: model:ir.model.fields,field_description:doctors.field_product_template__display_name
+#: model:ir.model.fields,field_description:doctors.field_res_partner__display_name
+#: model:ir.model.fields,field_description:doctors.field_sale_order__display_name
+#: model:ir.model.fields,field_description:doctors.field_sale_order_line__display_name
 msgid "Display Name"
 msgstr "عرض الاسم"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__marital_status__d
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__marital_status__d
 msgid "Divorced"
-msgstr "مطلق"
+msgstr "مطلقة"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_res_partner__is_doctor
-#: model:ir.model.fields,field_description:doctors.field_res_users__is_doctor
-msgid "Doctor"
+#: model:ir.model.fields,field_description:doctors.field_sale_order__doc_name
+msgid "Doctor name"
 msgstr "الطبيب"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_res_partner__is_doctor_assist
-#: model:ir.model.fields,field_description:doctors.field_res_users__is_doctor_assist
-msgid "Doctor Assist"
-msgstr "الطبيب المساعد"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_res_partner__is_doctor_drugs
-#: model:ir.model.fields,field_description:doctors.field_res_users__is_doctor_drugs
-msgid "Doctor Drugs"
-msgstr "طبيب التخدير"
-
-#. module: doctors
+#: model:ir.actions.act_window,name:doctors.act_res_partner
 #: model:ir.module.category,name:doctors.doctors_category
-#: model:ir.ui.menu,name:doctors.main_menu_doctors_Management
+#: model:ir.ui.menu,name:doctors.menu_insurance_company
 msgid "Doctors"
 msgstr "الاطباء"
 
 #. module: doctors
-#: model_terms:ir.ui.view,arch_db:doctors.doc_reg_list_kanban_view
-msgid "ENTITY:"
-msgstr "جهة"
+#: model:ir.model.fields,field_description:doctors.field_sale_order__doc_drugs
+msgid "Drugs Doctor"
+msgstr "طبيب تخدير"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__sex__f
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__sex__f
 msgid "Female"
 msgstr "انثي"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_follower_ids
-msgid "Followers"
-msgstr "متابعين"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "قناة المتابعين"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_partner_ids
-msgid "Followers (Partners)"
-msgstr "شركاء المتابعين"
-
-#. module: doctors
-#: model_terms:ir.ui.view,arch_db:doctors.doc_reg_list_search_view
-msgid "Group By"
-msgstr "تجميع بواسطة"
 
 #. module: doctors
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__id
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__id
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse__id
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__id
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__name
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__id
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__id
+#: model:ir.model.fields,field_description:doctors.field_product_product__id
+#: model:ir.model.fields,field_description:doctors.field_product_template__id
+#: model:ir.model.fields,field_description:doctors.field_res_partner__id
+#: model:ir.model.fields,field_description:doctors.field_sale_order__id
+#: model:ir.model.fields,field_description:doctors.field_sale_order_line__id
 msgid "ID"
 msgstr "كود"
 
@@ -153,45 +178,97 @@ msgid "ID Number"
 msgstr "رقم الكود"
 
 #. module: doctors
-#: model:ir.model.fields,help:doctors.field_doc_doc_reg__message_needaction
-#: model:ir.model.fields,help:doctors.field_doc_doc_reg__message_unread
-msgid "If checked, new messages require your attention."
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Invoiced"
+msgstr "مفوترة"
 
 #. module: doctors
-#: model:ir.model.fields,help:doctors.field_doc_doc_reg__message_has_error
-msgid "If checked, some messages have a delivery error."
-msgstr ""
+#: model:ir.model.fields,field_description:doctors.field_product_product__is_consumables
+#: model:ir.model.fields,field_description:doctors.field_product_template__is_consumables
+#: model:ir.model.fields,field_description:doctors.field_sale_order_line__is_consumables
+msgid "Is Consumables"
+msgstr "مستهلك"
 
 #. module: doctors
-#: model:ir.actions.act_window,name:doctors.act_res_partner
-msgid "Insurances Company"
-msgstr ""
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_doctor
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_doctor
+msgid "Is Doctor"
+msgstr "هل هو طبيب"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_is_follower
-msgid "Is Follower"
-msgstr "هل هم متابيعن"
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_doctor_assist
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_doctor_assist
+msgid "Is Doctor Assist"
+msgstr "هل هو مساعد طبيب"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_doctor_drugs
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_doctor_drugs
+msgid "Is Doctor Drugs"
+msgstr "هل هو طبيب تخدير"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_mech
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_mech
+msgid "Is Mech"
+msgstr "هل هو مكينة طبية"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_product_product__is_medical
+#: model:ir.model.fields,field_description:doctors.field_product_template__is_medical
+#: model:ir.model.fields,field_description:doctors.field_sale_order_line__is_medical
+msgid "Is Medical item"
+msgstr "هل هو دواء"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_nurse
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_nurse
+msgid "Is Nurse"
+msgstr "هل هي ممرضة"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_patient
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_patient
+msgid "Is Patient"
+msgstr "هل هو مريض"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_patient_relative
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_patient_relative
+msgid "Is Patient Relative"
+msgstr "هل هو قريب مريض"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_room
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_room
+msgid "Is Room"
+msgstr "غرفة"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_res_partner__is_surgery
+#: model:ir.model.fields,field_description:doctors.field_res_users__is_surgery
+msgid "Is Surgery"
+msgstr "جراحة"
 
 #. module: doctors
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor____last_update
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech____last_update
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse____last_update
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg____last_update
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room____last_update
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery____last_update
+#: model:ir.model.fields,field_description:doctors.field_product_product____last_update
+#: model:ir.model.fields,field_description:doctors.field_product_template____last_update
+#: model:ir.model.fields,field_description:doctors.field_res_partner____last_update
+#: model:ir.model.fields,field_description:doctors.field_sale_order____last_update
+#: model:ir.model.fields,field_description:doctors.field_sale_order_line____last_update
 msgid "Last Modified on"
 msgstr "اخر تعديل في"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__last_name
-msgid "Last Name"
-msgstr "اسم الاب"
 
 #. module: doctors
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__write_uid
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__write_uid
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse__write_uid
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__write_uid
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__write_uid
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__write_uid
 msgid "Last Updated by"
 msgstr "اخر تعديل بواسطة"
@@ -200,20 +277,21 @@ msgstr "اخر تعديل بواسطة"
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__write_date
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__write_date
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse__write_date
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__write_date
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__write_date
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__write_date
 msgid "Last Updated on"
 msgstr "اخر تعديل في"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "المرفقات الاساسية"
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__state__done
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__state__done
+msgid "Locked"
+msgstr "مقفل"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__sex__m
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__sex__m
 msgid "Male"
-msgstr "ذكر"
+msgstr ""
 
 #. module: doctors
 #: model:res.groups,name:doctors.group_doctors_manager
@@ -221,89 +299,113 @@ msgid "Manager"
 msgstr "مدير"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__marital_status
+#: model:ir.model.fields,field_description:doctors.field_sale_order__marital_status
 msgid "Marital Status"
 msgstr "الحالة الاجتماعية"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__marital_status__m
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__marital_status__m
 msgid "Married"
 msgstr "متزوج"
 
 #. module: doctors
-#: model_terms:ir.ui.view,arch_db:doctors.res_partner_inherit_form_doctors_view
+#: model_terms:ir.ui.view,arch_db:doctors.res_partner_inherit_form_health_center_view
 msgid "Medical"
-msgstr "دواء"
+msgstr "طبي"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_has_error
-msgid "Message Delivery error"
-msgstr "خطاء في توصيل الرسالة"
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Medical Item"
+msgstr "ادوية طبية "
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_ids
-msgid "Messages"
-msgstr "الرسائل"
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Medical Service"
+msgstr "خدمات طبية"
 
 #. module: doctors
-#: model:ir.model,name:doctors.model_doc_doc_reg
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Medical consu"
+msgstr "مستهلكات طبية"
+
+#. module: doctors
+#: model:ir.model,name:doctors.model_sale_order
 msgid "New patient registration"
 msgstr "تسجيل مريض جديد"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_needaction_counter
-msgid "Number of Actions"
-msgstr "عدد الافعال"
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Note"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_has_error_counter
-msgid "Number of errors"
-msgstr "عدد الاخطاء"
+#: model:ir.model.fields,field_description:doctors.field_sale_order__nurse_name
+msgid "Nurse Name"
+msgstr "الممرضة"
 
 #. module: doctors
-#: model:ir.model.fields,help:doctors.field_doc_doc_reg__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "عدد الرسائل التي تحتاج رد"
+#: model:ir.model.fields,field_description:doctors.field_sale_order__order_line
+msgid "Order Lines"
+msgstr "بنود الأمر"
 
 #. module: doctors
-#: model:ir.model.fields,help:doctors.field_doc_doc_reg__message_has_error_counter
-msgid "Number of messages with delivery error"
-msgstr "عدد الرسائل التي لم تصل"
-
-#. module: doctors
-#: model:ir.model.fields,help:doctors.field_doc_doc_reg__message_unread_counter
-msgid "Number of unread messages"
-msgstr "عدد الرسائل الغير مقروؤة"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_res_partner__is_nurse
-#: model:ir.model.fields,field_description:doctors.field_res_users__is_nurse
-msgid "Nurse"
-msgstr "ممرضة"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_id
-#: model:ir.model.fields,field_description:doctors.field_res_partner__is_patient
-#: model:ir.model.fields,field_description:doctors.field_res_users__is_patient
 #: model:ir.ui.menu,name:doctors.doc_reg_list_menu
+#: model:ir.ui.menu,name:doctors.patient_list_menu
 msgid "Patient"
 msgstr "المريض"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__age
+#: model:ir.model.fields,field_description:doctors.field_sale_order__age
 msgid "Patient Age"
 msgstr "عمر المريض"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_res_partner__is_patient_relative
-#: model:ir.model.fields,field_description:doctors.field_res_users__is_patient_relative
-msgid "Patient Relative"
-msgstr "قريب المريض"
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Patient Date In"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__photo
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Patient Name"
+msgstr "المريض"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_sale_order__photo
 msgid "Picture"
 msgstr "صورة"
+
+#. module: doctors
+#: model:ir.model,name:doctors.model_product_product
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Product"
+msgstr "المنتج"
+
+#. module: doctors
+#: model:ir.model,name:doctors.model_product_template
+msgid "Product Template"
+msgstr "قالب المنتج"
+
+#. module: doctors
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Quantity:"
+msgstr "الكمية"
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__state__draft
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__state__draft
+msgid "Quotation"
+msgstr "حالة جديدة"
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__state__sent
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__state__sent
+msgid "Quotation Sent"
+msgstr "تم إرسال الحالة"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_sale_order_line__doc_reg_id
+msgid "Reg Reference"
+msgstr ""
 
 #. module: doctors
 #: model:ir.model.fields,field_description:doctors.field_res_partner__relationship
@@ -318,30 +420,61 @@ msgid "Relative_id"
 msgstr "الرقم القومي"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__rh
+#: model:ir.model.fields,field_description:doctors.field_sale_order__rh
 msgid "Rh"
-msgstr "ار اتش"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__marital_status__x
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__state__sale
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__state__sale
+msgid "Sales Order"
+msgstr "حالة داخلية"
+
+#. module: doctors
+#: model:ir.model,name:doctors.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بنود تذكرة المريض"
+
+#. module: doctors
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Sales Order Lines"
+msgstr ""
+
+#. module: doctors
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Section Name (eg. Products, Services)"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__marital_status__x
 msgid "Seperated"
-msgstr "متفرق"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__sex
+#: model:ir.model.fields,field_description:doctors.field_sale_order__sex
 msgid "Sex"
 msgstr "الجنس"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__marital_status__s
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__marital_status__s
 msgid "Single"
-msgstr "اعزب"
+msgstr "عازب"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_res_partner__is_surgery
-#: model:ir.model.fields,field_description:doctors.field_res_users__is_surgery
-msgid "Surgery"
-msgstr "الجراحة"
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__state
+#: model:ir.model.fields,field_description:doctors.field_sale_order__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: doctors
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Terms and conditions..."
+msgstr "الشروط والاحكام"
+
+#. module: doctors
+#: model:ir.ui.menu,name:doctors.main_menu_doctors_Management
+msgid "The Doctors"
+msgstr "الاطباء"
 
 #. module: doctors
 #: model_terms:ir.actions.act_window,help:doctors.doc_reg_list_act_window
@@ -349,90 +482,112 @@ msgid "There is no examples click here to add new patient list."
 msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_unread
-msgid "Unread Messages"
-msgstr "رسائل غير مقروؤة"
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "Unit Price:"
+msgstr "سعر الوحدة"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "عدد الرسائل الغير مقروؤة"
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "UoM"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__marital_status__w
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__marital_status__w
 msgid "Widowed"
-msgstr "ارمل"
+msgstr "ارملة"
 
 #. module: doctors
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__activity_states
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__activity_states
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse__activity_states
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__activity_states
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__activity_states
 msgid "activity state"
 msgstr "حالة النشاط"
 
 #. module: doctors
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_doctor__state__append
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__state__append
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__reg_state__append
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_nurse__state__append
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_room__state__append
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_surgery__state__append
 msgid "append"
 msgstr "معلق"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__attach_flag__1
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_doctor__job__assist
+msgid "assist"
+msgstr "مساعدة"
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__attach_flag__1
 msgid "attach"
-msgstr "مرافق"
+msgstr "ملحق"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__attach_flag
+#: model:ir.model.fields,field_description:doctors.field_sale_order__attach_flag
 msgid "attach flag"
-msgstr "مرافق"
+msgstr "علم ملحق"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__attach_room
+#: model:ir.model.fields,field_description:doctors.field_sale_order__attach_room
 msgid "attach room debit"
-msgstr "قيمة سرير المرافق"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__c_arm
-msgid "c arm debit"
-msgstr "سي ارم"
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_room__room_type__a
+msgid "class a"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_room__room_type__b
+msgid "class b"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_room__room_type__c
+msgid "class c"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_room__room_type__d
+msgid "class d"
+msgstr ""
 
 #. module: doctors
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_doctor__state__close
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__state__close
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__reg_state__close
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_nurse__state__close
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_room__state__close
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_surgery__state__close
 msgid "close"
 msgstr "مغلق"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__reg_flag__0
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__reg_flag__0
 msgid "close patient"
-msgstr "ملف مريض مغلق"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_day
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_day
 msgid "count days"
-msgstr "عدد الايام"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__doctor_id
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__doc_name
+#: model_terms:ir.ui.view,arch_db:doctors.patient_form_inherit
+msgid "days"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model,name:doctors.model_doc_doc_room
+msgid "doc room"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_doctor__job__doctor
 #: model:res.groups,name:doctors.group_doctors_doctor
 msgid "doctor"
 msgstr "طبيب"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__doc_assist
-msgid "doctor assist"
-msgstr "طبيب مساعد"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__doc_drugs
-msgid "doctor drugs"
-msgstr "طبيب تخدير"
 
 #. module: doctors
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__name
@@ -440,6 +595,7 @@ msgid "doctor name"
 msgstr "اسم الطبيب"
 
 #. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__job
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_doctor__state
 msgid "doctor state"
 msgstr "حالة الطبيب"
@@ -450,24 +606,18 @@ msgid "doctors list"
 msgstr "قائمة الاطباء"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__ensure
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_doctor__job__drug
+msgid "drug"
+msgstr "تخدير"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_sale_order__ensure
 msgid "ensure"
 msgstr "تامين"
 
 #. module: doctors
-#: model:ir.actions.act_window,name:doctors.doc_reg_list_act_window
-#: model_terms:ir.ui.view,arch_db:doctors.doc_reg_list_search_view
-msgid "extended periods list"
-msgstr ""
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_level_debit
-msgid "level debit"
-msgstr "الدرجة"
-
-#. module: doctors
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__mech_debit
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_mech_debit
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_mech_debit
 msgid "machine debit"
 msgstr "قيمة الجهاز"
 
@@ -477,24 +627,27 @@ msgid "machine list"
 msgstr "قائمة الاجهزة الطبية"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__name
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_mech
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_mech
 msgid "machine name"
 msgstr "اسم الجهاز"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__state
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__reg_state
 msgid "machine state"
 msgstr "حالة الجهاز"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__attach_flag__0
-msgid "no attach"
-msgstr "بدون مرافق"
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_mech__name
+msgid "mech name"
+msgstr "الجهاز"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_nurse__nurse_id
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__nurse_name
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__attach_flag__0
+msgid "no attach"
+msgstr ""
+
+#. module: doctors
+#: model:res.groups,name:doctors.group_doctors_nurse
 msgid "nurse"
 msgstr "ممرضة"
 
@@ -515,119 +668,102 @@ msgstr "حالة الممرضة"
 
 #. module: doctors
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_doctor__state__open
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__state__open
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_mech__reg_state__open
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_nurse__state__open
+#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_room__state__open
 #: model:ir.model.fields.selection,name:doctors.selection__doc_doc_surgery__state__open
 msgid "open"
 msgstr "مفتوح"
 
 #. module: doctors
-#: model:ir.model.fields.selection,name:doctors.selection__doc_doc_reg__reg_flag__1
+#: model:ir.model.fields.selection,name:doctors.selection__sale_order__reg_flag__1
 msgid "open patient"
-msgstr "ملف مريض مفتوح"
+msgstr ""
 
 #. module: doctors
-#: model_terms:ir.ui.view,arch_db:doctors.doc_reg_list_form_view
-msgid "patient Name"
-msgstr "اسم المريض"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_address
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_address
 msgid "patient address"
-msgstr "عنوان"
+msgstr "عنوان المريض"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_bed
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_bed
 msgid "patient bed number"
 msgstr "رقم السرير"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_date_out
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_date_out
 msgid "patient date out"
-msgstr "تاريخ الخروج"
+msgstr "خروج المريض"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_discount
-msgid "patient discount"
-msgstr "خصم نقدي"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_level
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_level
 msgid "patient level"
-msgstr "درجة"
+msgstr "مستوي"
 
 #. module: doctors
-#: model_terms:ir.ui.view,arch_db:doctors.doc_reg_list_calendar_view
-#: model_terms:ir.ui.view,arch_db:doctors.doc_reg_list_form_view
-#: model_terms:ir.ui.view,arch_db:doctors.doc_reg_list_tree_view
-#: model_terms:ir.ui.view,arch_db:doctors.view_doc_reg_graph
+#: model:ir.actions.act_window,name:doctors.doc_reg_list_act_window
 msgid "patient list"
 msgstr "قائمة المرضي"
 
 #. module: doctors
-#: model_terms:ir.ui.view,arch_db:doctors.view_doc_reg_report_pivot
-msgid "patient list History Analysis"
-msgstr "قائمة تحليل تاريخ الحالات المرضية"
-
-#. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_other_debit
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_other_debit
 msgid "patient other debit"
-msgstr "مبالغ اضافية"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_reason
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_reason
 msgid "patient reason desc"
-msgstr "اسباب تواجد المريض"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_date
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_date
 msgid "patient registration date"
-msgstr "تاريخ التسجيل"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__r_address
+#: model:ir.model.fields,field_description:doctors.field_sale_order__r_address
 msgid "patient relative address"
-msgstr "عنوان المرافق"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__r_id
-msgid "patient relative id"
-msgstr "كود المرافق"
+#: model:ir.model.fields,field_description:doctors.field_sale_order__r_id
+msgid "patient relative id national"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__r_job
+#: model:ir.model.fields,field_description:doctors.field_sale_order__r_job
 msgid "patient relative job"
-msgstr "عمل المرافق"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__r_tel
+#: model:ir.model.fields,field_description:doctors.field_sale_order__r_tel
 msgid "patient relative mobile"
-msgstr "تليفون المرافق"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_room
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_room
 msgid "patient room number"
 msgstr "رقم الغرفة"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_state
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_state
 msgid "patient state"
 msgstr "حالة المريض"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__r_name
+#: model:ir.model.fields,field_description:doctors.field_sale_order__r_name
 msgid "patient's relative"
-msgstr "بيانات المرافق"
+msgstr "قريب المريض"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__r_level
+#: model:ir.model.fields,field_description:doctors.field_sale_order__r_level
 msgid "patient's relative level"
-msgstr "درجة القرابة"
+msgstr "مستوي القرابة للمريض"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_flag
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_flag
 msgid "patinet flag"
-msgstr "حالة المريض"
+msgstr ""
 
 #. module: doctors
 #: model:res.groups,name:doctors.group_doctors_receptionist
@@ -635,18 +771,46 @@ msgid "receptionist"
 msgstr "ريسبشن"
 
 #. module: doctors
-#: model_terms:ir.ui.view,arch_db:doctors.doc_reg_list_search_view
-msgid "reg_id"
-msgstr "كود تسجيل المريض"
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__room_attach
+msgid "room attach"
+msgstr "غرفة ملحقة"
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_surgery
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__surgery_id
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__room_grade
+msgid "room grade"
+msgstr "درجة الغرفة"
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__name
+msgid "room name"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__room_number
+msgid "room number"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__room_price
+msgid "room price"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__state
+msgid "room state"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_doc_doc_room__room_type
+msgid "room types"
+msgstr ""
+
+#. module: doctors
+#: model:ir.model.fields,field_description:doctors.field_sale_order__reg_surgery
 msgid "surgery"
-msgstr "جراحة"
+msgstr ""
 
 #. module: doctors
-#: model:ir.model.fields,field_description:doctors.field_doc_doc_reg__reg_surgery_debit
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__surgery_debit
 msgid "surgery debit"
 msgstr "قيمة الجراحة"
@@ -660,3 +824,4 @@ msgstr "اسم الجراحة"
 #: model:ir.model.fields,field_description:doctors.field_doc_doc_surgery__state
 msgid "surgery state"
 msgstr "حالة الجراحة"
+
