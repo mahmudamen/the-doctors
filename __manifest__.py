@@ -21,7 +21,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail', 'account', 'sale'],
+    'depends': ['base', 'mail', 'account', 'sale','stock','purchase','hr'],
 
     # always loaded
     'data': [
@@ -29,8 +29,9 @@
         'security/doctors_security.xml',
         'security/ir.model.access.csv',
         'views/main_menu_file.xml',
-        'views/doc_reg.xml',
+        'views/patient.xml',
         'views/res_partner.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

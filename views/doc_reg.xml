@@ -1,210 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="doc_reg_list_form_view" model="ir.ui.view">
-            <field name="name">doc.doc_reg.form</field>
-            <field name="model">doc.doc_reg</field>
+        <record id="patient_form_inherit" model="ir.ui.view">
+            <field name="name">doctors.patient.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sales.view_order_form"/>
+            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="patient list">
-                    <header>
-                        <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale"/>
-                    </header>
-                    <sheet>
-                        <field name="photo" nolabel="1"
-                            class="oe_left oe_avatar" img_width="120"
-                            img_height="120" width="120" height="120"
-                            widget="image" />
-                        <div class="oe_title">
-                            <div class="oe_edit_only">
-                                <label for="reg_id" />
-                            </div>
-                            <h1>
-                                <field style="width: 100%%" name="reg_id"
-                                    default_focus="1" placeholder="patient Name"
-                                    domain="[('is_patient', '=', True)]"
-                                    context="{'default_is_patient': True}"
-                                     />
-                            </h1>
-                        </div>
-                        <group col="1">
-                            <group col="1" >
-                                <group col="5" >
-                                 <field  name="date_of_birth" style="width: auto;"/>
-                                 <field  name="age" />
-                                 <field  name="sex" widget="one2many_list" style="width: auto;"/>
-                                </group>
-                                <group col="6" >
-                                    <field name="blood_type" style="width: auto;"/>
-                                    <field name="rh" style="width: auto;"/>
-                                </group>
-                                <group col="6" >
-                                    <field name="reg_address" style="width: auto;"/>
-                                    <field name="marital_status" widget="one2many_list" style="width: auto;"/>
-                                </group>
-                                <group col="6" >
-                                     <field name="reg_date"  style="width: auto;"/>
-                                     <field name="reg_level"  style="width: auto;"/>
-                                     <field name="reg_room"  style="width: auto;"/>
-                                     <field name="reg_bed"  style="width: auto;"/>
-                                </group>
-                                <group col="6" >
-                                     <field name="reg_reason"  style="width: auto;"/>
-                                     <field name="reg_date_out"  style="width: auto;"/>
-                                     <field name="reg_day"  style="width: auto;"/>
-                                </group>
-                                <group col="6" >
-                                    <field name="r_name"  style="width: auto;"/>
-                                    <field name="r_level"  style="width: auto;"/>
-                                    <field name="r_id"  style="width: auto;"/>
-                                </group>
-                                <group col="6" >
-                                    <field name="r_job"  style="width: auto;"/>
-                                    <field name="r_address"  style="width: auto;"/>
-                                    <field name="r_tel"  style="width: auto;"/>
-                                </group>
-                                <group col="6" >
-                                    <field name="doc_name" widget="one2many_list" style="width: auto;"/>
-                                    <field name="doc_drugs"  widget="one2many_list" style="width: auto;"/>
-                                    <field name="doc_assist" widget="one2many_list" style="width: auto;"/>
-                                    <field name="nurse_name" widget="one2many_list" style="width: auto;"/>
-                                </group>
-                                <group col="6" >
-                                    <field name="ensure" widget="monetary" style="width: auto;"/>
-                                    <field name="reg_other_debit"  widget="monetary" style="width: auto;"/>
-                                </group>
-                            </group>
-                        </group>
-                        <notebook position="inside">
-                            <page string="mech details">
-                            <field name="doc_reg_mechs">
-                                <tree string="Sales Order Lines"
-                                    editable="bottom"
-                                    decoration-info="(not display_type and invoice_status == 'to invoice')">
-                                    <field name="mech_id"  />
-                                    <field name="display_type" invisible="1"/>
-                                    <field name="discount" string="Disc.%" groups="product.group_discount_per_so_line" optional="show"/>
-                                    <field name="price_subtotal" widget="monetary" groups="account.group_show_line_subtotals_tax_excluded"/>
-                                    <field name="price_total" widget="monetary" groups="account.group_show_line_subtotals_tax_included"/>
-                                    <field name="state" invisible="1" />
-                                    <field name="invoice_status" invisible="1"/>
-                                    <field name="currency_id" invisible="1"/>
-                                    <field name="price_tax" invisible="1"/>
-                                    <field name="company_id" invisible="1"/>
-                                </tree>
-                            </field>
-                            </page>
-                        </notebook>
-                    </sheet>
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids" widget="mail_followers"
-                            groups="base.group_user" />
-                        <field name="message_ids" widget="mail_thread" />
-                    </div>
-                </form>
-            </field>
-        </record>
-
-        <record id="doc_reg_list_tree_view" model="ir.ui.view">
-            <field name="name">doc.doc_reg.tree</field>
-            <field name="model">doc.doc_reg</field>
-            <field name="arch" type="xml">
-                <tree string="patient list">
-                    <field name="reg_id"/>
-                </tree>
-            </field>
-        </record>
-
-        <record id="doc_reg_list_search_view" model="ir.ui.view">
-            <field name="name">doc.doc_reg.search</field>
-            <field name="model">doc.doc_reg</field>
-            <field name="arch" type="xml">
-                <search string="Patient list">
-                    <separator orientation="vertical" />
-
-                    <field name="reg_id"/>
-
-                    <newline />
-                    <group expand="0" string="Group By">
-                        <filter string="reg_id" name='by_reg_id' domain="[]" context="{'group_by':'reg_id'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
-
-        <record id="doc_reg_list_kanban_view" model="ir.ui.view">
-                    <field name="name">doc.doc_reg.Kanban</field>
-                    <field name="model">doc.doc_reg</field>
-                    <field name="arch" type="xml">
-                        <kanban >
-                            <progressbar field="reg_state" widget="progressbar" colors='{"open": "success", "close": "warning", "append": "danger"}'/>
-                            <field name="reg_id"/>
-                            <templates>
-                                <t t-name="kanban-box" >
-                                      <div class="oe_kanban_global_click">
-                                        <div class="oe_kanban_details">
-                                            <strong class="o_kanban_record_title">
-                                                <field name="reg_id"/>
-                                            </strong>
-                                            <ul>
-                                                <li><strong>debit: <field name="reg_id"></field></strong></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </t>
-                            </templates>
-                        </kanban>
-                    </field>
-        </record>
-
-        <record id="doc_reg_list_calendar_view" model="ir.ui.view">
-            <field name="name">doc.doc_reg.calendar.view</field>
-            <field name="model">doc.doc_reg</field>
-            <field name="arch" type="xml">
-                <calendar string="patient list" color="reg_id"
-                    quick_add="True"  event_open_popup="true" mode="month" date_start="write_date">
-                    <field name="reg_id" />
-                </calendar>
-            </field>
-        </record>
-
-        <record id="view_doc_reg_report_pivot" model="ir.ui.view">
-            <field name="name">doc.doc_reg.pivot</field>
-            <field name="model">doc.doc_reg</field>
-            <field name="arch" type="xml">
-                <pivot string="patient list History Analysis">
-                   <field name="reg_id" type="row"/>
-                   <field name="reg_id" type="measure"/>
-                    <field name="reg_id" type="col"/>
-                </pivot>
-            </field>
-        </record>
-
-        <record id="view_doc_reg_graph" model="ir.ui.view" >
-           <field name="name">doc.doc_regt.graph</field>
-           <field name="model">doc.doc_reg</field>
-           <field name="type">graph</field>
-           <field name="arch" type="xml">
-                 <graph string="patient list"  orientation="horizontal"  type="pie" >
-                    <field name="reg_id"/>
-                     <field name="reg_id" group="True" type="measure" />
-                </graph>
+                <field name="name" position="after">
+                    <field name="reg_address"/>
+                    <field name="marital_status"/>
+                    <field name="reg_level"/>
+                    <field name="reg_room"/>
+                    <field name="reg_bed"/>
+                </field>
             </field>
         </record>
 
         <record id="doc_reg_list_act_window" model="ir.actions.act_window">
             <field name="name">patient list</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">doc.doc_reg</field>
+            <field name="res_model">sale.order</field>
             <field name="view_mode">kanban,tree,form,calendar,pivot,graph</field>
-            <field name="search_view_id" ref="doc_reg_list_search_view"></field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     There is no examples click here to add new patient list.
                 </p>
             </field>
         </record>
+
         <menuitem name="Patient" id="doc_reg_list_menu"
                   parent="main_menu_doctors_Management"
                   action="doc_reg_list_act_window"/>
+
     </data>
 </odoo>

@@ -3,7 +3,15 @@
 
         <menuitem 
         	id="main_menu_doctors_Management"
-        	name="Doctors"
+        	name="The Doctors"
             web_icon="doctors,static/description/icon.png"
            />
+           <menuitem name="Patient" id="patient_list_menu"
+                parent="main_menu_doctors_Management"
+                  sequence="0"
+                  />
+        <menuitem name="Configuration Clinic" id="configuration_list_menu"
+                  parent="main_menu_doctors_Management"
+                  sequence="0"
+                  />
 </openerp>
